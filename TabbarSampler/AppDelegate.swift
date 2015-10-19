@@ -15,7 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // バーの色
+        UITabBar.appearance().barTintColor = UIColor.brownColor()
+        
+        // 通常時と選択時のAttribute設定
+        let font = UIFont(name: "HelveticaNeue-Bold", size: 10.0)!
+        let normal = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        let selected = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.yellowColor()]
+        
+        // 見た目に反映
+        UITabBarItem.appearance().setTitleTextAttributes(normal, forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes(selected, forState: UIControlState.Selected)
+        
+        // 選択時の画像の色
+        UITabBar.appearance().tintColor = UIColor.yellowColor()
+        
         return true
     }
 
